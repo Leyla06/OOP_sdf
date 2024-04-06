@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
 public class User {
-    Scanner scanner = new Scanner(System.in);
     private String tamAd;
     private String nomre;
     private String username;
     private String password;
     private int qiymet;
+    private String aldigiKitab;
 
-    public User()
-    {
+    public User(String username, String password, String tamAd, String nomre, int qiymet, String aldigiKitab) {
         this.username = username;
         this.password = password;
         this.tamAd = tamAd;
         this.nomre = nomre;
         this.qiymet = qiymet;
+        this.aldigiKitab = aldigiKitab;
     }
 
     public String getUsername()
@@ -56,5 +56,12 @@ public class User {
     public void setQiymet()
     {
         this.qiymet = qiymet;
+    }
+    public String getAldigiKitab() {
+        return aldigiKitab;
+    }
+
+    public void setAldigiKitab(){
+        this.aldigiKitab = aldigiKitab;
     }
 }

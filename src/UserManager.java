@@ -1,11 +1,13 @@
 import java.util.Scanner;
-
+//UserService interfeysinden UserManager-e butun methodlari implements edilir:
 public class UserManager implements UserService{
+    //daxil edilen melumatlari oxumaq ucun istifade olunur:
     Scanner scanner = new Scanner(System.in);
-    User user = new User();
-
+    //User adli classin obyekti yaradilir, new yeni bir obyekt yaratmaq ucun istifade olunur, User() ise 'User' classinin konstruktorunu cagirir.
+    User user = new User(null, null, null, null, 0, null);
+    // bir classin metodunu diger classlarda tekrar tanitmaq ucundur:
     @Override
-    public void register() {
+    public void register(User user) { //Qeydiyyat ucun method
         System.out.println("Adinizi,soyadinizi daxil edin:");
         String tamAd = scanner.nextLine();
         System.out.println("Istifadeci adini daxil edin:");
@@ -14,11 +16,12 @@ public class UserManager implements UserService{
         String nomre = scanner.nextLine();
         System.out.println("Sifreni daxil edin:");
         String password = scanner.nextLine();
+        user = new User(username, password, tamAd, nomre, 0, null);
         System.out.println("Istifadeci sisteme daxil oldu.");
     }
 
     @Override
-    public void login() {
+    public void login(User user) { // daxil olmaq ucun method
         System.out.println("Istifadeci adini daxil edin:");
         String username = scanner.nextLine();
         System.out.println("Sifreni daxil edin:");
@@ -34,7 +37,7 @@ public class UserManager implements UserService{
     }
 
     @Override
-    public void logout() {
+    public void logout(User user) { // Cixis ucun method
         System.out.println("Sistemden cixildi.");
     }
 }

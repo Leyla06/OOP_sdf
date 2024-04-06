@@ -1,5 +1,5 @@
 public interface UserService {
-    void register();
-    void login();
-    void logout();
+    void register(User user);
+    void login(User user);
+    void logout(User user);
 }

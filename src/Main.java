@@ -4,17 +4,17 @@ public class Main {
     public static void main(String[] args) {
         UserManager um = new UserManager();
         Scanner scanner = new Scanner(System.in);
-        Alici alici = new Alici("Leyla Xelilova", "05656565", "leyla06", "9989897", 6, "Harry Potter");
+        User user = new User("Leyla06", "1234567", "Leyla Xelilova", "2354655676", 7, "Harry Potter");
         System.out.println("Login\n");
         System.out.println("Register\n");
         System.out.println("Logout\n");
-        System.out.println("Secin => ");
+        System.out.print("Secin => ");
         String secim = scanner.nextLine();
         switch (secim){
-            case "login": um.login(); break;
-            case "register": um.register(); break;
-            case "logout": um.logout(); break;
+            case "login": um.login(user); break;
+            case "register": um.register(user); break;
+            case "logout": um.logout(user); break;
         }
-        FileManager.getInstance().saveToFile(alici);
+        FileManager.getInstance().saveToFile(user);
     }
 }
